@@ -31,9 +31,9 @@ public class AuthController {
         String username = credentials.get("username");
         String password = credentials.get("password");
 
-        if (authService.authenticate(username, password)) {
-            // TODO: Generate JWT token
-            return ResponseEntity.ok(Map.of("message", "Login successful"));
+        Map<String, String> result = authService.authenticate(username, password);
+        if (result != null) {
+            return ResponseEntity.ok(result);
         } else {
             return ResponseEntity.badRequest().body(Map.of("error", "Invalid credentials"));
         }

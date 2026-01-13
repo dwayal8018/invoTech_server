@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.invoTech.masterdb.entity.Tenant;
 import com.example.invoTech.masterdb.repository.TenantRepository;
+
 @Service
 public class MasterDbService {
 	private final TenantRepository tenantRepository;
